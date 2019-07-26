@@ -20,7 +20,7 @@ int main(int argc, char** argv) {
 	
 	srand(time(NULL));
 	
-	printf("******Programa para calcular o determinante de uma matriz quadratica******\n\nDigite a dimensão da matriz e quantas matrizes calcular\n");
+	printf("******Programa para calcular o determinante de uma matriz quadratica******\n\nDigite a dimensÃ£o da matriz e quantas matrizes calcular\n");
 	scanf("%d %d",&qtdlinha,&n);
 	
 	printf("\n");
@@ -39,7 +39,7 @@ int main(int argc, char** argv) {
 		
 		float determinante=Multi_diagonal(qtdlinha,qtdcoluna,matriz);
 		
-		printf("\n==>O determinante dessa matriz é igual a %.3f\n\n",determinante);		
+		printf("\n==>O determinante dessa matriz Ã© igual a %.3f\n\n",determinante);		
 	}	
 		
 	for(int i=0;i<qtdlinha;i++){
@@ -96,7 +96,7 @@ float **pivor_zero(int qtdlinha,int qtdcoluna,int contador1,int contador2,float 
 			aux2=matriz[contador1];
 			matriz[contador1]=matriz[i];
 			matriz[i]=aux2;
-			printf("Troca de linha de matriz efetuada:\n\n");                           //djasdjajo
+			printf("Troca de linha de matriz efetuada:\n\n");                           
 			printar_matriz(qtdlinha,qtdcoluna,matriz);	
 			printf("\n");		
 			break;
@@ -136,12 +136,14 @@ float **pivoteamento(int qtdlinha,int qtdcoluna,float **matriz){
 				coluna_aux[j]=matriz[contador1][j];				
 			}
 			
-			for(int i=0;i<qtdcoluna;i++){
-				coluna_aux[i]=coluna_aux[i]/aux1;
+			if(aux1!=0){
+				for(int i=0;i<qtdcoluna;i++){
+					coluna_aux[i]=coluna_aux[i]/aux1;
+				}
 			}
 			 
 			for(int i=0;i<qtdcoluna;i++){				 
-				matriz[contador1][i]=(-1)*matriz[contador1][i];              //dsad
+				matriz[contador1][i]=(-1)*matriz[contador1][i];              
 			}
 		}
 		
